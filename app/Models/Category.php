@@ -10,6 +10,14 @@ class Category extends Model
     use HasFactory;
 
     public function sub_categories() {
-        return $this->hasMany(Sub_Category::class);
+        return $this->hasMany(SubCategory::class);
+    }
+
+    public function countProduct() {
+        $result = 0;
+        foreach($this->sub_categories as $subCate){
+            $result += count($subCate->products);
+        }
+        return $result;
     }
 }
