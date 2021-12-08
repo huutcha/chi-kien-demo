@@ -18,7 +18,8 @@ class ArticleResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'content' => $this->content,
-            'images' => ImageResource::collection($this->whenLoaded('images'))
+            'images' => ImageResource::collection($this->whenLoaded('images')),
+            'createdBefore' => $this->created_before
         ];
     }
 }

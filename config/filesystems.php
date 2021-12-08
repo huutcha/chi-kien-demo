@@ -60,6 +60,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'categories' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/categories'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         'actions' => [
             'driver' => 'local',
             'root' => storage_path('app/public/actions'),
